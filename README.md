@@ -38,12 +38,13 @@ PowerShell 调用系统 `ssh/scp` 的实测结论：
 ### 3.1 在 Trae 中加载
 
 把下面 JSON 加到 Trae 的 MCP 设置：
+这个路径按照实际放置的路径来使用即可！
 
 ```json
 {
   "mcpServers": {
     "ssh-mcp": {
-      "command": "D:\\文档\\AI工作站\\TraeCN工作空间\\90-工具与脚本\\02-ssh-mcp-go\\ssh-mcp.exe",
+      "command": "D:\\文档\\AI工作站\\02-ssh-mcp-go\\ssh-mcp.exe",
       "args": []
     }
   }
@@ -219,17 +220,8 @@ YAML 里 `88.11` 这种像数字的别名和纯数字密码建议加引号，避
 - exe 未签名，首次运行可能触发 Windows SmartScreen 或杀毒软件提示
 - 单条命令输出超过 `max_bytes` 会截断；默认 256 KB
 
-## 九、重新编译
 
-```powershell
-cd "D:\文档\AI工作站\TraeCN工作空间\90-工具与脚本\02-ssh-mcp-go"
-$env:GOPROXY="https://goproxy.cn,direct"
-go build -trimpath -ldflags "-s -w" -o ssh-mcp.exe .
-```
-
-需要 Go 1.26+；运行 exe 不需要 Go。
-
-## 十、文件清单
+## 九、文件清单
 
 | 文件 | 作用 |
 |---|---|
