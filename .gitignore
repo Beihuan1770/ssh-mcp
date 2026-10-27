@@ -1,0 +1,9 @@
+# 本地真实配置（含密码），绝不提交
+ssh_config.yaml
+ssh_config.json
+ssh_config.yaml.bak*
+ssh_config.json.bak*
+
+# 构建备份与临时文件
+ssh-mcp.exe~
+*.tmp

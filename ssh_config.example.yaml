@@ -1,0 +1,29 @@
+# 复制本文件为 ssh_config.yaml，填入真实地址与密码后再启动 ssh-mcp.exe
+# 真实的 ssh_config.yaml 已被 .gitignore 排除，不会提交到仓库
+
+version: 1
+default_host: node1
+
+defaults:
+  port: 22
+  timeout_seconds: 10
+  command_timeout_seconds: 30
+  encoding: utf-8
+  host_key_policy: auto
+  known_hosts: ~/.ssh/known_hosts
+  keepalive_seconds: 30
+  audit: true
+  audit_dir: ~/.ssh-mcp/logs
+
+hosts:
+  - id: node1
+    name: 示例主机
+    aliases:
+      - "88.11"
+      - 示例机
+    hostname: 192.168.1.10
+    user: root
+    password: "你的密码"
+    tags:
+      - test
+    description: 示例条目，复制后请改成你的地址与密码
